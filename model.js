@@ -9,11 +9,11 @@ Observations.demo_observations = function(){
   ];
 
   ids = _(demos).map(function(observation){
-    found = Observations.findOne(observation)._id;
+    found = Observations.findOne(observation);
     if(!found){
        return Observations.insert(observation);
     }else{
-      return found;
+      return found._id;
     }
   });
 
