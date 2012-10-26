@@ -1,3 +1,7 @@
 Meteor.publish("observations", function(){
-  return Observations.find({owner: this.userId});
+  if(this.userId){
+    return Observations.find({owner: this.userId});
+  }else{
+    return Observations.demo_observations();
+  }
 });

@@ -14,7 +14,15 @@
 </body>
 
 <template name="gatherer">
-  <input tabindex="1" type="text" name="" id="entry" placeholder="Observe your mind..." />
+<input 
+  tabindex="1" 
+  type="text" 
+  name="" 
+  id="entry" 
+  rel="popover"
+  data-original-title="Hi there"
+  data-content="Sign up to start observing your mind!"
+  placeholder="Observe your mind..." />
   <ul id="observation-list">
     {{#each observations}}
       {{> observation }}
