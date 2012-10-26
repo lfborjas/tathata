@@ -2,10 +2,10 @@ Observations = new Meteor.Collection("observations");
 
 Observations.demo_observations = function(){
   demos = [
-    {type: "feeling",  label: "info", content: "Feeling happy because of meteorjs"},
+    {type: "feeling",  label: "info", content: "happy because of meteorjs"},
     {type: "expense", label: "important", content: "Spent $5 on chipotle" },
     {type: "income",  label: "success",   content: "Got $10 for selling a kidney"},
-    {type: "feeling", label: "info", content: "Feeling sad because of the semicolons"},
+    {type: "feeling", label: "info", content: "sad because of the semicolons"},
   ];
 
   ids = _(demos).map(function(observation){

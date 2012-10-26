@@ -20,7 +20,7 @@ Classifier.rules = {
       reason: matches[5]
     }
   })
-  ,income: rule(/(got|made) (.)(\d+\.?\d*) (from|at) (\w+)/i, function(matches){
+  ,income: rule(/(got|made) (.)(\d+\.?\d*) (for|from|at) (\w+)/i, function(matches){
     return {
       content: matches[0],
       type: "income",
