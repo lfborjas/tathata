@@ -1,13 +1,30 @@
 <head>
-  <title>tathata</title>
+  <title>Tathata: life in its thusness</title>
 </head>
 
 <body>
-  {{> hello}}
+  <div class="container">
+     <div class="header row">
+       {{loginButtons}} 
+     </div>
+     <div class="row">
+      {{> gatherer}}
+     </div>
+  </div>
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="gatherer">
+  <input tabindex="1" type="text" name="" id="entry" placeholder="Observe your mind..." />
+  <ul id="observation-list">
+    {{#each observations}}
+      {{> observation }}
+    {{/each}}
+  </ul>
+</template>
+
+<template name="observation">
+  <li class="observation-item"> 
+    <span class="label label-{{ label }}">{{ type }}</span>
+    {{ content }}
+  </li>
 </template>
