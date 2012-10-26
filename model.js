@@ -22,8 +22,13 @@ Observations.demo_observations = function(){
   });
 };
 
+var allow_own = function(userId, observations){
+    return _(observations).all(function(o){ return o.owner == userId });
+}
+
 Observations.allow({
-  insert: function(userId, observation){ return false; }
+  remove: allow_own,
+  update: allow_own
 });
 
 Meteor.methods({
