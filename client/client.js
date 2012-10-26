@@ -8,7 +8,7 @@ Template.gatherer.events({
         event.target.value
       );
       event.target.value = "";
-    }else{
+    }else if(!this.userId){
       $("#entry").popover('show');
     }
   },

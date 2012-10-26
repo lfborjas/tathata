@@ -28,12 +28,8 @@ Observations.allow({
 
 Meteor.methods({
   createObservation: function(content){
-    classified = {
-      type: "free_form",
-      label: "success"
-    };
+    classified = Classifier.classify(content);
     return Observations.insert(_(classified).extend({
-      content: content,
       owner: this.userId
     }));
   }
